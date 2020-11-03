@@ -1,13 +1,13 @@
 import React from "react";
-import "../Home.css";
-
-export default function Home() {
+import { Link } from "react-router-dom";
+const Home = () => {
   return (
-    <div className="Home">
-      <div className="lander">
-        <h1>Boring Airlines</h1>
-        <p>A simple flight booking app</p>
-      </div>
+    <div>
+      <h1>Boring Airlines</h1>
+      <Link to="/login">Log In</Link>
+      <br></br>
+      <Link to="/signup">Sign Up</Link>
     </div>
   );
-}
+};
+export default Home;
