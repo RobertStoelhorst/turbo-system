@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_090816) do
+ActiveRecord::Schema.define(version: 2020_11_03_220425) do
 
   create_table "flights", force: :cascade do |t|
     t.integer "flight_number"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_090816) do
     t.text "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
   create_table "users_flights", id: false, force: :cascade do |t|
