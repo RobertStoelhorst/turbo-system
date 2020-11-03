@@ -3,6 +3,3 @@ class User < ApplicationRecord
 validates :email, :presence => true, :uniqueness => true
 has_many :flights, through: :reservations
 end
-
-
-# :dependent => :destroy
