@@ -4,17 +4,26 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
+import NotFound from "./NotFound";
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoggedIn: false,
       user: {},
+      admin: false,
     };
   }
+
   componentDidMount() {
     this.loginStatus();
   }
+
+  componentWillMount() {
+    return this.props.loggedInStatus ? this.redirect() : null;
+  }
+
   loginStatus = () => {
     axios
       .get("http://localhost:3001/logged_in", { withCredentials: true })
@@ -27,18 +36,26 @@ class App extends Component {
       })
       .catch((error) => console.log("api errors:", error));
   };
+
   handleLogin = (data) => {
     this.setState({
       isLoggedIn: true,
       user: data.user,
     });
+    if (data.user.admin) {
+      this.setState({
+        admin: true,
+      });
+    }
   };
+
   handleLogout = () => {
     this.setState({
       isLoggedIn: false,
       user: {},
     });
   };
+
   render() {
     return (
       <div>
@@ -48,7 +65,11 @@ class App extends Component {
               exact
               path="/"
               render={(props) => (
-                <Home {...props} loggedInStatus={this.state.isLoggedIn} />
+                <Home
+                  {...props}
+                  handleLogout={this.handleLogout}
+                  loggedInStatus={this.state.isLoggedIn}
+                />
               )}
             />
             <Route
@@ -73,6 +94,9 @@ class App extends Component {
                 />
               )}
             />
+            <Route>
+              <NotFound />
+            </Route>
           </Switch>
         </BrowserRouter>
       </div>
