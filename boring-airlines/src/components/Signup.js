@@ -11,12 +11,14 @@ class Signup extends Component {
       errors: "",
     };
   }
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, email, password, password_confirmation } = this.state;
@@ -40,9 +42,11 @@ class Signup extends Component {
       })
       .catch((error) => console.log("api errors:", error));
   };
+
   redirect = () => {
     this.props.history.push("/");
   };
+
   handleErrors = () => {
     return (
       <div>
@@ -54,6 +58,7 @@ class Signup extends Component {
       </div>
     );
   };
+
   render() {
     const { username, email, password, password_confirmation } = this.state;
     return (

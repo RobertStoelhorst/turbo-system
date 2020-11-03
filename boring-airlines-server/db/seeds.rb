@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-u1 = User.create :name => 'Ryan Bullough', :email => 'sailorjerry@ga.co', :password => 'chicken', :admin => true
-u2 = User.create :name => 'William Rudder', :email => 'eldorado@ga.co', :password => 'chicken', :admin => true
-u3 = User.create :name => 'Robert Stoelhorst', :email => 'thekraken@ga.co', :password => 'chicken', :admin => true
-u4 = User.create :name => 'Captain Morgan', :email => 'sirhenrymorgan@ga.co', :password => 'chicken', :admin => true
+u1 = User.create :username => 'Ryan Bullough', :email => 'sailorjerry@ga.co', :password => 'chicken', :admin => true
+u2 = User.create :username => 'William Rudder', :email => 'eldorado@ga.co', :password => 'chicken', :admin => true
+u3 = User.create :username => 'Robert Stoelhorst', :email => 'thekraken@ga.co', :password => 'chicken', :admin => true
+u4 = User.create :username => 'Captain Morgan', :email => 'sirhenrymorgan@ga.co', :password => 'chicken', :admin => true
 puts "#{ User.count } users."
 
 Plane.destroy_all
