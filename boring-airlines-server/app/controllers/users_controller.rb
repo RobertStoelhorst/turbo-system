@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   def index
       @users = User.all
       if @users
@@ -48,3 +49,53 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
   end
+=======
+def index
+    @users = User.all
+    if @users
+      render json: {
+        users: @users
+      }
+    else
+      render json: {
+        status: 500,
+        errors: ['no users found']
+      }
+    end
+end
+def show
+    @user = User.find(params[:id])
+   if @user
+      render json: {
+        user: @user
+      }
+    else
+      render json: {
+        status: 500,
+        errors: ['user not found']
+      }
+    end
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      login!
+      render json: {
+        status: :created,
+        user: @user
+      }
+    else
+      render json: {
+        status: 500,
+        errors: @user.errors.full_messages
+      }
+    end
+  end
+private
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+end
+>>>>>>> 6eae872bd25d93d6fe4ccda611e5c5b0f4074c59
