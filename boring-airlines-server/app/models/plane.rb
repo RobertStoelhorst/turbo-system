@@ -1,4 +1,4 @@
 class Plane < ApplicationRecord
   has_many :flights
-
-end
+  has_many :users
+  end
