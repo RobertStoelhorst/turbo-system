@@ -13,17 +13,17 @@ u4 = User.create :username => 'Captain Morgan', :email => 'sirhenrymorgan@ga.co'
 puts "#{ User.count } users."
 
 Plane.destroy_all
-p1 = Plane.create :name => "Boeing 747", :row => 3, :column => 3
-p1 = Plane.create :name => "Boeing 747", :row => 4, :column => 4
-p1 = Plane.create :name => "Starship", :row => 2, :column => 5
-p1 = Plane.create :name => "Falcon 9", :row => 1, :column => 3
+p1 = Plane.create :name => "Boeing 747", :rows => 3, :columns => 3
+p2 = Plane.create :name => "Boeing 747", :rows => 4, :columns => 4
+p3 = Plane.create :name => "Starship", :rows => 2, :columns => 5
+p4 = Plane.create :name => "Falcon 9", :rows => 1, :columns => 3
 puts "#{ Plane.count } planes."
 
 Flight.destroy_all
-f1 = Flight.create :flight_number => 122, :origin => 'Sydney', :destination => 'Paradise', :date => '01/10/2020'
-f2 = Flight.create :flight_number => 141, :origin => 'California', :destination => 'Fucked', :date => '11/12/2020'
-f3 = Flight.create :flight_number => 187, :origin => 'Cape Canaveral', :destination => 'Mars', :date => '09/11/2020'
-f4 = Flight.create :flight_number => 116, :origin => 'Melbourne', :destination => 'Sea of Tranquility', :date => '10/10/2020'
+f1 = Flight.create :flight_number => 122, :origin => 'Sydney', :destination => 'Paradise', :date => "2020-10-10"
+f2 = Flight.create :flight_number => 141, :origin => 'California', :destination => 'Fucked', :date => "2020-10-10"
+f3 = Flight.create :flight_number => 187, :origin => 'Cape Canaveral', :destination => 'Mars', :date => "2020-10-10"
+f4 = Flight.create :flight_number => 116, :origin => 'Melbourne', :destination => 'Sea of Tranquility', :date => "2020-10-10"
 puts "#{ Flight.count } flights."
 
 puts "Planes and Flights"

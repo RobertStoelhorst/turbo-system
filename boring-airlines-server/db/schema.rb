@@ -10,23 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_220425) do
+ActiveRecord::Schema.define(version: 2020_11_04_022542) do
 
   create_table "flights", force: :cascade do |t|
     t.integer "flight_number"
     t.text "origin"
     t.text "destination"
     t.string "date"
+    t.integer "plane_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "planes", force: :cascade do |t|
-    t.integer "rows"
-    t.integer "columns"
+    t.string "row"
+    t.integer "column"
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "flight_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "flight_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flight_id"], name: "index_reservations_on_flight_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,11 +48,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_220425) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
-  end
-
-  create_table "users_flights", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "flight_id"
   end
 
 end

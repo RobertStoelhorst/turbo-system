@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
+import Flights from "./Flights";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 
@@ -14,11 +15,24 @@ class App extends Component {
       isLoggedIn: false,
       user: {},
       admin: false,
+      flights: [],
     };
   }
 
+  addNewFlight = (flightData) => {
+    this.setState((prevState) => ({
+      flights: [...prevState, flightData],
+    }));
+  };
+
+  fetchFlights = async () => {
+    const resp = await axios.get("http://localhost:3001/flights.json");
+    console.log(resp);
+  };
+
   componentDidMount() {
     this.loginStatus();
+    this.fetchFlights();
   }
 
   componentWillMount() {
@@ -75,6 +89,17 @@ class App extends Component {
             />
             <Route
               exact
+              path="/flights"
+              render={(props) => (
+                <Flights
+                  {...props}
+                  addNewFlight={this.addNewFlight}
+                  fetchFlights={this.fetchFlights}
+                />
+              )}
+            />
+            <Route
+              exact
               path="/login"
               render={(props) => (
                 <Login
@@ -99,10 +124,7 @@ class App extends Component {
               exact
               path="/planes"
               render={(props) => (
-                <Airplane
-                  {...props}
-                  loggedInStatus={this.state.isLoggedIn}
-                />
+                <Airplane {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
             <Route>
