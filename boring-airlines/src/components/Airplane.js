@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import AirplaneList from './AirplaneList'
+
 
 class Airplane extends Component {
 
@@ -25,17 +27,21 @@ class Airplane extends Component {
 
   _handleSubmit = (event) => {
     event.preventDefault();
-    const { name, rows, columns } = this.state;
+    const { name, row, column } = this.state;
     let plane = {
       name: name,
-      rows: rows,
-      columns: columns
+      row: row,
+      column: column
     };
+    this.props.onSubmit(this.state);
     axios
       .post("http://localhost:3001/planes.json", { plane }).then((response) => {
         console.log(response)
-      })
-  }
+      }).then(axios
+        .get("http://localhost:3001/planes.json", { plane }).then((response) => {
+          console.log(response)
+        }))
+      }
 
 render() {
   var {name, columns, rows} = this.state
@@ -51,14 +57,14 @@ render() {
       <input
         placeholder="a"
         type="integer"
-        name="rows"
+        name="row"
 
         onChange={this._handleChange}
       />
       <input
         placeholder="1"
         type="integer"
-        name="columns"
+        name="column"
         onChange={this._handleChange}
       />
       <button placeholder="submit" type="submit">

@@ -16,6 +16,7 @@ class App extends Component {
       user: {},
       admin: false,
       flights: [],
+      planes: []
     };
   }
 
@@ -27,12 +28,23 @@ class App extends Component {
 
   fetchFlights = async () => {
     const resp = await axios.get("http://localhost:3001/flights.json");
+    // console.log(resp);
+  };
+
+  fetchPlanes = async () => {
+    const resp = await axios.get("http://localhost:3001/planes.json");
     console.log(resp);
+    this.setState({
+     planes: [...this.state.planes, resp.data],
+   });
+
   };
 
   componentDidMount() {
     this.loginStatus();
     this.fetchFlights();
+
+    this.fetchPlanes();
   }
 
   componentWillMount() {
