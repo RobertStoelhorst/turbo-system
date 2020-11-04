@@ -40,31 +40,33 @@ class Airplane extends Component {
 render() {
   var {name, columns, rows} = this.state
   return (
-  <div>
-    <form onSubmit={this._handleSubmit}>
-      <input
-        placeholder="JFK"
-        type="text"
-        name="name"
-        onChange={this._handleChange}
-      />
-      <input
-        placeholder="a"
-        type="integer"
-        name="rows"
+  <div class="container">
+    <div class="form-group">
+      <form onSubmit={this._handleSubmit}>
+        <input class="form-control"
+          placeholder="JFK"
+          type="text"
+          name="name"
+          onChange={this._handleChange}
+        />
+        <input class="form-control"
+          placeholder="a"
+          type="integer"
+          name="rows"
 
-        onChange={this._handleChange}
-      />
-      <input
-        placeholder="1"
-        type="integer"
-        name="columns"
-        onChange={this._handleChange}
-      />
-      <button placeholder="submit" type="submit">
-        Create Flight
-      </button>
-    </form>
+          onChange={this._handleChange}
+        />
+        <input class="form-control"
+          placeholder="1"
+          type="integer"
+          name="columns"
+          onChange={this._handleChange}
+        />
+        <button class="btn btn-primary" placeholder="submit" type="submit">
+          Create Flight
+        </button>
+      </form>
+  </div>
 </div>
 
 
