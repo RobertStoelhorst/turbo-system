@@ -64,7 +64,7 @@ class Signup extends Component {
     return (
       <div class="container">
         <div class="form-group">
-          <h1 class="text-muted">Sign Up</h1>
+          <h2 class="text-muted">Sign Up</h2>
           <form onSubmit={this.handleSubmit}>
             <input class="form-control"
               placeholder="username"
