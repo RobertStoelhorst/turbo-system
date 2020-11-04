@@ -94,6 +94,7 @@ render() {
           Create Flight
         </button>
       </form>
+       <h1>{this.state.name}</h1>
   </div>
 
 </div>

@@ -5,6 +5,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import Flights from "./Flights";
+import FlightSearch from "./FlightSearch";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 
@@ -35,8 +36,13 @@ class App extends Component {
 
   fetchFlights = async () => {
 
-    const resp = await axios.get("http://localhost:3001/flights.json");
-    // console.log(resp);
+    const resp = await axios.get("http://localhost:3001/flights.json", {
+      withCredentials: true,
+    });
+    console.log(resp.data);
+    this.setState({
+      flights: [...this.state.flights, resp.data],
+    });
   };
 
   fetchPlanes = async () => {
@@ -47,13 +53,7 @@ class App extends Component {
    });
 
 
-    // const resp = await axios.get("http://localhost:3001/flights.json", {
-    //   withCredentials: true,
-    // });
-    // console.log(resp.data);
-    // this.setState({
-    //   flights: [...this.state.flights, resp.data],
-    // });
+
 
   };
 
@@ -102,11 +102,7 @@ class App extends Component {
 
   render() {
     return (
-
-      <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand bg-light" href="#">BoringAir</a>
-      </nav>
+      <div>
         <BrowserRouter>
           <Switch>
             <Route
@@ -161,6 +157,14 @@ class App extends Component {
                 <Airplane {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
+            <Route
+              exact
+              path="/flightsearch"
+              render={(props) => (
+                <FlightSearch {...props} loggedInStatus={this.state.isLoggedIn} />
+              )}
+            />
+
             <Route>
               <NotFound />
             </Route>
