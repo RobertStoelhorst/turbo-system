@@ -5084,3 +5084,48 @@ Migrating to AddFlightToPlane (20201103234552)
   [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
   ↳ db/seeds.rb:22
 >>>>>>> 7aeab972580aaf40bc57161d37f03e0785a6f261
+Started GET "/flights.json" for ::1 at 2020-11-05 07:59:58 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 07:59:58 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robertstoelhorst/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robertstoelhorst/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/index.json.jbuilder (2.1ms)
+Completed 200 OK in 36ms (Views: 5.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 08:00:22 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 08:00:22 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/index.json.jbuilder (1.4ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights" for ::1 at 2020-11-05 08:00:26 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:17
+  Rendered flights/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 692ms (Views: 687.8ms | ActiveRecord: 0.2ms)
+
+

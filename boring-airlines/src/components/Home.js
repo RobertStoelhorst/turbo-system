@@ -14,9 +14,7 @@ const Home = (props) => {
   };
 
   return (
-
       <div class="container">
-
         <Link to="/login">Log In</Link>
         <br></br>
         <Link to="/signup">Sign Up</Link>
@@ -29,8 +27,7 @@ const Home = (props) => {
         <br></br>
         {props.loggedInStatus ? <Link to="/flights">Flights</Link> : null}
         <br></br>
-        {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}
-  
+        {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}  
       </div>
   );
 };
