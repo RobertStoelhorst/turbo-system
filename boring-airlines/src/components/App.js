@@ -86,11 +86,12 @@ class App extends Component {
 
   render() {
     return (
-
       <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand bg-light" href="#">BoringAir</a>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand bg-light" href="/">
+            ✈️ BoringAir
+          </a>
+        </nav>
         <BrowserRouter>
           <Switch>
             <Route

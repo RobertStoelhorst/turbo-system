@@ -7726,3 +7726,66 @@ Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.4ms)
 =======
 >>>>>>> 7aeab972580aaf40bc57161d37f03e0785a6f261
 >>>>>>> 638745e3fc3b7e46c2bb091052f080c60a63a4ec
+Started GET "/flights.json" for ::1 at 2020-11-05 10:50:20 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 10:50:20 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rjb/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rjb/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (14.0ms)
+Completed 200 OK in 56ms (Views: 18.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2020-11-05 10:51:16 +1100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-05 10:51:25 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Ryan Bullough", "email"=>"sailorjerry@ga.co", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Ryan Bullough", "email"=>"sailorjerry@ga.co", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sailorjerry@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 265ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:51:28 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/show.json.jbuilder (2.2ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 10:51:33 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/show.json.jbuilder (2.1ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
