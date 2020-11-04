@@ -6113,3 +6113,229 @@ Migrating to AddFlightToPlane (20201103234552)
   [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
   ↳ db/seeds.rb:22
 >>>>>>> b8f5a3b3e1264febe6fb69c4f3b29ddc1ffba890
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddFlightToPlane (20201103234552)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "planes" ADD "flight_id" integer[0m
+  ↳ db/migrate/20201103234552_add_flight_to_plane.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201103234552"]]
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rjb/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Ryan Bullough"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sailorjerry@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Ryan Bullough"], ["email", "sailorjerry@ga.co"], ["password_digest", "$2a$12$R5yLwbLxwvAvGN5kqcBInOMNqTi4c6OzPlNap5Jc6rlRpSdWoiniq"], ["created_at", "2020-11-04 04:21:31.274305"], ["updated_at", "2020-11-04 04:21:31.274305"], ["admin", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "William Rudder"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eldorado@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "William Rudder"], ["email", "eldorado@ga.co"], ["password_digest", "$2a$12$dxzc7slYbTn3PX0jOHARweRvndz4/rTSmC9w1B9HV1wYvZ1lqEz1m"], ["created_at", "2020-11-04 04:21:31.535671"], ["updated_at", "2020-11-04 04:21:31.535671"], ["admin", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Robert Stoelhorst"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "thekraken@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Robert Stoelhorst"], ["email", "thekraken@ga.co"], ["password_digest", "$2a$12$TK1Xc.iNwdq/SBoWd9P6yOTktgNOIrYqyOAkfreAy/LcCjmxzuE7y"], ["created_at", "2020-11-04 04:21:31.796876"], ["updated_at", "2020-11-04 04:21:31.796876"], ["admin", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Captain Morgan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sirhenrymorgan@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Captain Morgan"], ["email", "sirhenrymorgan@ga.co"], ["password_digest", "$2a$12$5j2y2YNQe2x.A7RycH6cMuVbx64DuChHmQNexWEQIg8CtETs7KYle"], ["created_at", "2020-11-04 04:21:32.057255"], ["updated_at", "2020-11-04 04:21:32.057255"], ["admin", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.7ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (0.2ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (0.2ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlane Create (0.3ms)[0m  [1m[32mINSERT INTO "planes" ("rows", "columns", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rows", 3], ["columns", 3], ["name", "Boeing 747"], ["created_at", "2020-11-04 04:21:32.076295"], ["updated_at", "2020-11-04 04:21:32.076295"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlane Create (0.4ms)[0m  [1m[32mINSERT INTO "planes" ("rows", "columns", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rows", 4], ["columns", 4], ["name", "Boeing 747"], ["created_at", "2020-11-04 04:21:32.078636"], ["updated_at", "2020-11-04 04:21:32.078636"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPlane Create (0.3ms)[0m  [1m[32mINSERT INTO "planes" ("rows", "columns", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rows", 2], ["columns", 5], ["name", "Starship"], ["created_at", "2020-11-04 04:21:32.081222"], ["updated_at", "2020-11-04 04:21:32.081222"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPlane Create (0.3ms)[0m  [1m[32mINSERT INTO "planes" ("rows", "columns", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rows", 1], ["columns", 3], ["name", "Falcon 9"], ["created_at", "2020-11-04 04:21:32.083372"], ["updated_at", "2020-11-04 04:21:32.083372"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "planes"[0m
+  ↳ db/seeds.rb:20
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Destroy (0.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mFlight Create (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_number", "origin", "destination", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["flight_number", 122], ["origin", "Sydney"], ["destination", "Paradise"], ["date", "2020-10-10"], ["created_at", "2020-11-04 04:21:32.102811"], ["updated_at", "2020-11-04 04:21:32.102811"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mFlight Create (0.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_number", "origin", "destination", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["flight_number", 141], ["origin", "California"], ["destination", "Fucked"], ["date", "2020-10-10"], ["created_at", "2020-11-04 04:21:32.104914"], ["updated_at", "2020-11-04 04:21:32.104914"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mFlight Create (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_number", "origin", "destination", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["flight_number", 187], ["origin", "Cape Canaveral"], ["destination", "Mars"], ["date", "2020-10-10"], ["created_at", "2020-11-04 04:21:32.107668"], ["updated_at", "2020-11-04 04:21:32.107668"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFlight Create (0.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_number", "origin", "destination", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["flight_number", 116], ["origin", "Melbourne"], ["destination", "Sea of Tranquility"], ["date", "2020-10-10"], ["created_at", "2020-11-04 04:21:32.110151"], ["updated_at", "2020-11-04 04:21:32.110151"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "flights"[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFlight Update (0.3ms)[0m  [1m[33mUPDATE "flights" SET "plane_id" = ?, "updated_at" = ? WHERE "flights"."id" = ?[0m  [["plane_id", 9], ["updated_at", "2020-11-04 04:21:32.121537"], ["id", 9]]
+  ↳ db/seeds.rb:30
+  [1m[36mPlane Update (0.1ms)[0m  [1m[33mUPDATE "planes" SET "updated_at" = ?, "flight_id" = ? WHERE "planes"."id" = ?[0m  [["updated_at", "2020-11-04 04:21:32.122760"], ["flight_id", 9], ["id", 9]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mFlight Update (0.3ms)[0m  [1m[33mUPDATE "flights" SET "plane_id" = ?, "updated_at" = ? WHERE "flights"."id" = ?[0m  [["plane_id", 10], ["updated_at", "2020-11-04 04:21:32.124748"], ["id", 10]]
+  ↳ db/seeds.rb:31
+  [1m[36mPlane Update (0.1ms)[0m  [1m[33mUPDATE "planes" SET "updated_at" = ?, "flight_id" = ? WHERE "planes"."id" = ?[0m  [["updated_at", "2020-11-04 04:21:32.125746"], ["flight_id", 10], ["id", 10]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mFlight Update (0.3ms)[0m  [1m[33mUPDATE "flights" SET "plane_id" = ?, "updated_at" = ? WHERE "flights"."id" = ?[0m  [["plane_id", 11], ["updated_at", "2020-11-04 04:21:32.127684"], ["id", 11]]
+  ↳ db/seeds.rb:32
+  [1m[36mPlane Update (0.2ms)[0m  [1m[33mUPDATE "planes" SET "updated_at" = ?, "flight_id" = ? WHERE "planes"."id" = ?[0m  [["updated_at", "2020-11-04 04:21:32.128940"], ["flight_id", 11], ["id", 11]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mFlight Update (0.5ms)[0m  [1m[33mUPDATE "flights" SET "plane_id" = ?, "updated_at" = ? WHERE "flights"."id" = ?[0m  [["plane_id", 12], ["updated_at", "2020-11-04 04:21:32.131837"], ["id", 12]]
+  ↳ db/seeds.rb:33
+  [1m[36mPlane Update (0.1ms)[0m  [1m[33mUPDATE "planes" SET "updated_at" = ?, "flight_id" = ? WHERE "planes"."id" = ?[0m  [["updated_at", "2020-11-04 04:21:32.133306"], ["flight_id", 12], ["id", 12]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" ORDER BY "planes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]

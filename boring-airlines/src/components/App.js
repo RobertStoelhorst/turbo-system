@@ -21,13 +21,18 @@ class App extends Component {
 
   addNewFlight = (flightData) => {
     this.setState((prevState) => ({
-      flights: [...prevState, flightData],
+      flights: [...prevState.flights, flightData],
     }));
   };
 
   fetchFlights = async () => {
-    const resp = await axios.get("http://localhost:3001/flights.json");
-    console.log(resp);
+    const resp = await axios.get("http://localhost:3001/flights.json", {
+      withCredentials: true,
+    });
+    console.log(resp.data);
+    this.setState({
+      flights: [...this.state.flights, resp.data],
+    });
   };
 
   componentDidMount() {
@@ -93,6 +98,7 @@ class App extends Component {
               render={(props) => (
                 <Flights
                   {...props}
+                  flights={this.state.flights}
                   addNewFlight={this.addNewFlight}
                   fetchFlights={this.fetchFlights}
                 />
