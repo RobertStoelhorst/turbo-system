@@ -24,6 +24,7 @@ const Home = (props) => {
           Log Out
         </Link>
       ) : null}
+      <Link to="/planes">plane create</Link>
     </div>
   );
 };
