@@ -20,10 +20,10 @@ p1 = Plane.create :name => "Falcon 9", :row => 1, :column => 3
 puts "#{ Plane.count } planes."
 
 Flight.destroy_all
-f1 = Flight.create :flight_number => 122, :origin => 'Sydney', :destination => 'Paradise', :date => DateTime.strptime("Tuesday 01/12/2020 08:00", "%A %B %d, %Y, %H:%M")
-f2 = Flight.create :flight_number => 141, :origin => 'California', :destination => 'Fucked', :date => DateTime.strptime("Tuesday 03/11/2020 16:00", "%A %B %d, %Y, %H:%M")
-f3 = Flight.create :flight_number => 187, :origin => 'Cape Canaveral', :destination => 'Mars', :date => DateTime.strptime("Friday 25/12/2020 08:00", "%A %B %d, %Y, %H:%M")
-f4 = Flight.create :flight_number => 116, :origin => 'Melbourne', :destination => 'Sea of Tranquility', :date => DateTime.strptime("Friday 06/11/2020 08:00", "%A %B %d, %Y, %H:%M")
+f1 = Flight.create :flight_number => 122, :origin => 'Sydney', :destination => 'Paradise', :date => '01/10/2020'
+f2 = Flight.create :flight_number => 141, :origin => 'California', :destination => 'Fucked', :date => '11/12/2020'
+f3 = Flight.create :flight_number => 187, :origin => 'Cape Canaveral', :destination => 'Mars', :date => '09/11/2020'
+f4 = Flight.create :flight_number => 116, :origin => 'Melbourne', :destination => 'Sea of Tranquility', :date => '10/10/2020'
 puts "#{ Flight.count } flights."
 
 puts "Planes and Flights"
