@@ -8,6 +8,13 @@ import Flights from "./Flights";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 
+             <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous"
+             />
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +29,12 @@ class App extends Component {
 
   addNewFlight = (flightData) => {
     this.setState((prevState) => ({
-      flights: [...prevState, flightData],
+      flights: [...prevState.flights, flightData],
     }));
   };
 
   fetchFlights = async () => {
+
     const resp = await axios.get("http://localhost:3001/flights.json");
     // console.log(resp);
   };
@@ -37,6 +45,15 @@ class App extends Component {
     this.setState({
      planes: [...this.state.planes, resp.data],
    });
+
+
+    // const resp = await axios.get("http://localhost:3001/flights.json", {
+    //   withCredentials: true,
+    // });
+    // console.log(resp.data);
+    // this.setState({
+    //   flights: [...this.state.flights, resp.data],
+    // });
 
   };
 
@@ -105,6 +122,7 @@ class App extends Component {
               render={(props) => (
                 <Flights
                   {...props}
+                  flights={this.state.flights}
                   addNewFlight={this.addNewFlight}
                   fetchFlights={this.fetchFlights}
                 />
