@@ -3146,3 +3146,209 @@ Migrating to AddFlightToPlane (20201103234552)
   ↳ db/seeds.rb:20
   [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
   ↳ db/seeds.rb:22
+Started GET "/planes.json" for ::1 at 2020-11-04 12:47:43 +1100
+Processing by PlanesController#index as JSON
+  Rendering planes/index.json.jbuilder
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.json.jbuilder:1
+  Rendered planes/_plane.json.jbuilder (45.9ms)
+  Rendered planes/index.json.jbuilder (111.3ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `rows' for #<Plane:0x00007f96dee82908>
+Did you mean?  row
+               row?
+               row=):
+    1: json.extract! plane, :id, :rows, :columns, :name, :created_at, :updated_at
+    2: json.url plane_url(plane, format: :json)
+  
+app/views/planes/_plane.json.jbuilder:1:in `_app_views_planes__plane_json_jbuilder___4075004187371906043_17020'
+app/views/planes/index.json.jbuilder:1:in `_app_views_planes_index_json_jbuilder__4492340872165690575_16980'
+Started GET "/planes.json" for ::1 at 2020-11-04 12:48:55 +1100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/CarlaRudder/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by PlanesController#index as JSON
+  Rendering planes/index.json.jbuilder
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.json.jbuilder:1
+  Rendered planes/_plane.json.jbuilder (7.8ms)
+  Rendered planes/index.json.jbuilder (26.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `rows' for #<Plane:0x00007f90feb8aa88>
+Did you mean?  row
+               row?
+               row=):
+    1: json.extract! plane, :id, :rows, :columns, :name, :created_at, :updated_at
+    2: json.url plane_url(plane, format: :json)
+  
+app/views/planes/_plane.json.jbuilder:1:in `_app_views_planes__plane_json_jbuilder__1219622295078658620_13640'
+app/views/planes/index.json.jbuilder:1:in `_app_views_planes_index_json_jbuilder__4015158221945468087_13600'
+Started GET "/planes.json" for ::1 at 2020-11-04 12:50:10 +1100
+Processing by PlanesController#index as JSON
+  Rendering planes/index.json.jbuilder
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.json.jbuilder:1
+  Rendered planes/_plane.json.jbuilder (10.2ms)
+  Rendered planes/index.json.jbuilder (17.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `rows' for #<Plane:0x00007f90fdd8d020>
+Did you mean?  row
+               row?
+               row=):
+    1: json.extract! plane, :id, :rows, :columns, :name, :created_at, :updated_at
+    2: json.url plane_url(plane, format: :json)
+  
+app/views/planes/_plane.json.jbuilder:1:in `_app_views_planes__plane_json_jbuilder__1219622295078658620_14260'
+app/views/planes/index.json.jbuilder:1:in `_app_views_planes_index_json_jbuilder__4015158221945468087_14220'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/CarlaRudder/.rvm/rubies/ruby-2.7.1/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Ryan Bullough"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sailorjerry@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Ryan Bullough"], ["email", "sailorjerry@ga.co"], ["password_digest", "$2a$12$7oWvzAUxmKZy2E9cdlRkOu7pYUyJ.IM4.T1ygGgA8yVBKKbdm46Sq"], ["created_at", "2020-11-04 01:50:50.714767"], ["updated_at", "2020-11-04 01:50:50.714767"], ["admin", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (141.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "William Rudder"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eldorado@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "William Rudder"], ["email", "eldorado@ga.co"], ["password_digest", "$2a$12$QA4t2JJC3uJOz6teXU6eku9UhYlG1xeDNez5AavSV5SHysGyrnaSK"], ["created_at", "2020-11-04 01:50:51.675006"], ["updated_at", "2020-11-04 01:50:51.675006"], ["admin", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Robert Stoelhorst"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "thekraken@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Robert Stoelhorst"], ["email", "thekraken@ga.co"], ["password_digest", "$2a$12$870I6D070kzk0BmcYyzIXuU/jr50vD/V3siIXLwxWiei6G6nkl2g2"], ["created_at", "2020-11-04 01:50:52.307318"], ["updated_at", "2020-11-04 01:50:52.307318"], ["admin", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Captain Morgan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sirhenrymorgan@ga.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Captain Morgan"], ["email", "sirhenrymorgan@ga.co"], ["password_digest", "$2a$12$vXQ3c.aw1ukVEwpCbADRsOmlA6J6tRWGUHFaxz82lbug.QkQ1ju8."], ["created_at", "2020-11-04 01:50:53.147623"], ["updated_at", "2020-11-04 01:50:53.147623"], ["admin", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (16.6ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:15
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (0.6ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:15
+  [1m[35m (131.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (6.6ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:15
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Destroy (1.0ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlane Create (0.8ms)[0m  [1m[32mINSERT INTO "planes" ("row", "column", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["row", "A"], ["column", 3], ["name", "Boeing 747"], ["created_at", "2020-11-04 01:50:53.726863"], ["updated_at", "2020-11-04 01:50:53.726863"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlane Create (0.8ms)[0m  [1m[32mINSERT INTO "planes" ("row", "column", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["row", "B"], ["column", 4], ["name", "Boeing 747"], ["created_at", "2020-11-04 01:50:53.732350"], ["updated_at", "2020-11-04 01:50:53.732350"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPlane Create (1.8ms)[0m  [1m[32mINSERT INTO "planes" ("row", "column", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["row", "C"], ["column", 5], ["name", "Starship"], ["created_at", "2020-11-04 01:50:53.740346"], ["updated_at", "2020-11-04 01:50:53.740346"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPlane Create (0.8ms)[0m  [1m[32mINSERT INTO "planes" ("row", "column", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["row", "D"], ["column", 3], ["name", "Falcon 9"], ["created_at", "2020-11-04 01:50:53.891447"], ["updated_at", "2020-11-04 01:50:53.891447"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "planes"[0m
+  ↳ db/seeds.rb:20
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:22
+Started GET "/planes.json" for ::1 at 2020-11-04 12:51:08 +1100
+Processing by PlanesController#index as JSON
+  Rendering planes/index.json.jbuilder
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.json.jbuilder:1
+  Rendered planes/_plane.json.jbuilder (8.6ms)
+  Rendered planes/index.json.jbuilder (12.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `rows' for #<Plane:0x00007f90fd2c6998>
+Did you mean?  row
+               row?
+               row=):
+    1: json.extract! plane, :id, :rows, :columns, :name, :created_at, :updated_at
+    2: json.url plane_url(plane, format: :json)
+  
+app/views/planes/_plane.json.jbuilder:1:in `_app_views_planes__plane_json_jbuilder__1219622295078658620_14880'
+app/views/planes/index.json.jbuilder:1:in `_app_views_planes_index_json_jbuilder__4015158221945468087_14840'
