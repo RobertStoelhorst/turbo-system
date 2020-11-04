@@ -5,6 +5,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import Flights from "./Flights";
+import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 
 class App extends Component {
@@ -117,6 +118,13 @@ class App extends Component {
                   handleLogin={this.handleLogin}
                   loggedInStatus={this.state.isLoggedIn}
                 />
+              )}
+            />
+            <Route
+              exact
+              path="/planes"
+              render={(props) => (
+                <Airplane {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
             <Route>

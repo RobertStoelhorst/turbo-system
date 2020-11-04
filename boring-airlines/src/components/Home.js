@@ -26,6 +26,8 @@ const Home = (props) => {
       ) : null}
       <br></br>
       {props.loggedInStatus ? <Link to="/flights">Flights</Link> : null}
+      <br></br>
+      {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}
     </div>
   );
 };
