@@ -15,19 +15,19 @@ const Home = (props) => {
 
   return (
     <div>
-      <Link to="/login">Log In</Link>
+      {props.loggedInStatus ? null : <Link to="/login">Log In</Link>}
       <br></br>
-      <Link to="/signup">Sign Up</Link>
+      {props.loggedInStatus ? null : <Link to="/signup">Sign Up</Link>}
+      <br></br>
+      {props.loggedInStatus ? <Link to="/flights">All Flights</Link> : null}
+      <br></br>
+      {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}
       <br></br>
       {props.loggedInStatus ? (
         <Link to="/logout" onClick={handleClick}>
           Log Out
         </Link>
       ) : null}
-      <br></br>
-      {props.loggedInStatus ? <Link to="/flights">Flights</Link> : null}
-      <br></br>
-      {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}
     </div>
   );
 };

@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, useParams } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import Flights from "./Flights";
+import Flight from "./Flight";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 
-             <link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous"
-             />
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>;
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
     const resp = await axios.get("http://localhost:3001/flights.json", {
       withCredentials: true,
     });
-    console.log(resp.data);
+    // console.log(resp.data);
     this.setState({
       flights: [...this.state.flights, resp.data],
     });
@@ -111,6 +112,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/flights/:flightID" component={Flight} />
             <Route
               exact
               path="/login"

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 class Flights extends Component {
   constructor() {
     super();
-    this.state = {};
   }
 
   render() {
@@ -15,7 +13,14 @@ class Flights extends Component {
         <h1>All Flights</h1>
         {flights.map((flight) => (
           <section>
-            <Link to="/flights/:id">{flight.flight_number}</Link>
+            <Link
+              to={{
+                pathname: `/flights/${flight.id}`,
+                id: flight.id,
+              }}
+            >
+              {flight.flight_number}
+            </Link>
             <p>
               Travelling from <strong>{flight.origin}</strong> to{" "}
               <strong>{flight.destination}</strong>{" "}
