@@ -8250,3 +8250,1419 @@ Processing by FlightsController#show as JSON
 Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/logged_in" for ::1 at 2020-11-05 10:52:53 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 10:52:53 +1100
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 404 Not Found in 48ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=7):
+  Rendering flights/index.json.jbuilder
+  
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+app/controllers/application_controller.rb:11:in `current_user'
+app/controllers/sessions_controller.rb:20:in `is_logged_in?'
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (2.8ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (133.9ms)
+Completed 200 OK in 197ms (Views: 139.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 10:52:56 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 10:52:56 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=7):
+  
+app/controllers/application_controller.rb:11:in `current_user'
+app/controllers/sessions_controller.rb:20:in `is_logged_in?'
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/index.json.jbuilder (15.8ms)
+Completed 200 OK in 87ms (Views: 81.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2020-11-05 10:53:07 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Robert Stoelhorst", "email"=>"chicken", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Robert Stoelhorst", "email"=>"chicken", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "chicken"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2020-11-05 10:53:11 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Robert Stoelhorst", "email"=>"thekraken@ga.co", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Robert Stoelhorst", "email"=>"thekraken@ga.co", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "thekraken@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 200 OK in 525ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:53:15 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/show.json.jbuilder (6.5ms)
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:53:17 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/show.json.jbuilder (3.2ms)
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:54:48 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+Started GET "/logged_in" for ::1 at 2020-11-05 10:54:49 +1100
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+Started GET "/flights.json" for ::1 at 2020-11-05 10:54:49 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+
+
+  Rendering flights/show.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.7ms)
+  Rendered flights/show.json.jbuilder (16.8ms)
+  Rendered flights/_flight.json.jbuilder (4.6ms)
+Completed 200 OK in 58ms (Views: 36.2ms | ActiveRecord: 0.9ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/index.json.jbuilder (23.5ms)
+Completed 200 OK in 46ms (Views: 34.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:58:13 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (3.2ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 10:59:17 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.0ms)
+  Rendered flights/show.json.jbuilder (5.7ms)
+Completed 200 OK in 16ms (Views: 9.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:00:00 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/show.json.jbuilder (3.3ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:00:07 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/show.json.jbuilder (4.5ms)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:00:46 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/flights.json" for ::1 at 2020-11-05 11:00:47 +1100
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 12ms (Views: 1.5ms | ActiveRecord: 2.1ms)
+
+
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (3.8ms)
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/index.json.jbuilder (23.3ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:00:52 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.3ms)
+  Rendered flights/show.json.jbuilder (7.9ms)
+Completed 200 OK in 31ms (Views: 17.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:00:56 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (4.3ms)
+  Rendered flights/show.json.jbuilder (6.6ms)
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:01:40 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/show.json.jbuilder (3.3ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:01:42 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.1ms)
+  Rendered flights/show.json.jbuilder (7.1ms)
+Completed 200 OK in 44ms (Views: 25.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:01:54 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/show.json.jbuilder (4.9ms)
+Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:04:19 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:04:19 +1100
+Processing by FlightsController#show as JSON
+Started GET "/flights.json" for ::1 at 2020-11-05 11:04:19 +1100
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (2.8ms)
+  Rendered flights/show.json.jbuilder (7.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Completed 200 OK in 37ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/index.json.jbuilder (22.3ms)
+Completed 200 OK in 38ms (Views: 31.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/flights.json" for ::1 at 2020-11-05 11:06:43 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:06:43 +1100
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:06:43 +1100
+Processing by FlightsController#index as JSON
+Processing by FlightsController#show as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 2.1ms)
+
+
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.8ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/show.json.jbuilder (9.7ms)
+Completed 200 OK in 40ms (Views: 12.4ms | ActiveRecord: 1.0ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (21.1ms)
+Completed 200 OK in 60ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:07:10 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/show.json.jbuilder (3.7ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:07:11 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+Started GET "/logged_in" for ::1 at 2020-11-05 11:07:11 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:07:11 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  Rendering flights/show.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+  Rendered flights/_flight.json.jbuilder (2.3ms)
+Completed 200 OK in 17ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+  Rendered flights/show.json.jbuilder (14.4ms)
+Completed 200 OK in 54ms (Views: 40.1ms | ActiveRecord: 1.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/index.json.jbuilder (19.2ms)
+Completed 200 OK in 39ms (Views: 25.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:08:01 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (3.4ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:09:36 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:09:36 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  ↳ app/controllers/flights_controller.rb:68
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/flights.json" for ::1 at 2020-11-05 11:09:36 +1100
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+Processing by FlightsController#index as JSON
+  Rendering flights/show.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.9ms)
+  Rendered flights/show.json.jbuilder (11.8ms)
+Completed 200 OK in 41ms (Views: 15.8ms | ActiveRecord: 1.6ms)
+
+
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (19.0ms)
+Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:10:51 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:10:51 +1100
+Processing by SessionsController#is_logged_in? as HTML
+Processing by FlightsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (11.6ms)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:11:52 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:11:52 +1100
+Processing by SessionsController#is_logged_in? as HTML
+Processing by FlightsController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (2.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (16.5ms)
+Completed 200 OK in 42ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:11:55 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/show.json.jbuilder (3.3ms)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:11:56 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/show.json.jbuilder (3.9ms)
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:12:36 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/show.json.jbuilder (6.7ms)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:14:31 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:14:31 +1100
+Processing by SessionsController#is_logged_in? as HTML
+Processing by FlightsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/index.json.jbuilder (16.1ms)
+Completed 200 OK in 30ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:14:54 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (1.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/show.json.jbuilder (2.9ms)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:14:56 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/show.json.jbuilder (5.0ms)
+Completed 200 OK in 18ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:15:44 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/show.json.jbuilder (5.8ms)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:17:05 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (1.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.6ms)
+  Rendered flights/show.json.jbuilder (7.0ms)
+Completed 200 OK in 30ms (Views: 12.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:17:24 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:17:24 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 13ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (3.1ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/index.json.jbuilder (14.9ms)
+Completed 200 OK in 29ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:17:34 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:17:34 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (2.3ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (1.5ms)
+  Rendered flights/index.json.jbuilder (16.1ms)
+Completed 200 OK in 45ms (Views: 26.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:17:45 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (2.8ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:20:46 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.2ms)
+  Rendered flights/show.json.jbuilder (7.3ms)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:20:46 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/flights.json" for ::1 at 2020-11-05 11:20:46 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:20:46 +1100
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+  Rendering flights/show.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (3.5ms)
+  Rendered flights/show.json.jbuilder (15.7ms)
+  ↳ app/views/flights/index.json.jbuilder:1
+Completed 200 OK in 138ms (Views: 24.3ms | ActiveRecord: 1.2ms)
+
+
+  Rendered flights/_flight.json.jbuilder (2.9ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/index.json.jbuilder (23.5ms)
+Completed 200 OK in 115ms (Views: 37.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:20:58 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+Started GET "/logged_in" for ::1 at 2020-11-05 11:20:58 +1100
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/flights.json" for ::1 at 2020-11-05 11:20:58 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  ↳ app/controllers/flights_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Processing by FlightsController#index as JSON
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/show.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.9ms)
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/show.json.jbuilder (51.9ms)
+Completed 200 OK in 88ms (Views: 66.1ms | ActiveRecord: 1.1ms)
+
+
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/index.json.jbuilder (58.4ms)
+Completed 200 OK in 78ms (Views: 72.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:21:00 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/show.json.jbuilder (4.4ms)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:21:30 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:21:30 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:21:30 +1100
+Processing by FlightsController#show as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  ↳ app/controllers/flights_controller.rb:68
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/show.json.jbuilder (7.9ms)
+Completed 200 OK in 40ms (Views: 16.8ms | ActiveRecord: 0.9ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (28.4ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights.json" for ::1 at 2020-11-05 11:21:37 +1100
+Started GET "/logged_in" for ::1 at 2020-11-05 11:21:37 +1100
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (4.6ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/index.json.jbuilder (25.9ms)
+Completed 200 OK in 44ms (Views: 35.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:21:39 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.5ms)
+  Rendered flights/show.json.jbuilder (5.1ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:21:44 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.7ms)
+  Rendered flights/show.json.jbuilder (5.0ms)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:21:46 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (2.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.1ms)
+  Rendered flights/show.json.jbuilder (6.6ms)
+Completed 200 OK in 39ms (Views: 15.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:21:49 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.7ms)
+  Rendered flights/show.json.jbuilder (5.9ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:21:51 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/show.json.jbuilder (5.0ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:21:53 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/show.json.jbuilder (3.0ms)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:21:55 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/show.json.jbuilder (2.9ms)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:22:00 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (3.3ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:22:01 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/show.json.jbuilder (4.6ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:22:04 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.3ms)
+  Rendered flights/show.json.jbuilder (9.8ms)
+Completed 200 OK in 39ms (Views: 22.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:22:09 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.6ms)
+  Rendered flights/show.json.jbuilder (8.0ms)
+Completed 200 OK in 26ms (Views: 17.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:22:36 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:22:36 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/index.json.jbuilder (13.0ms)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:22:39 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/show.json.jbuilder (3.2ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:22:40 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/show.json.jbuilder (4.5ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:22:42 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.5ms)
+  Rendered flights/show.json.jbuilder (3.9ms)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:22:43 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.9ms)
+  Rendered flights/show.json.jbuilder (6.4ms)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:22:56 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.4ms)
+  Rendered flights/show.json.jbuilder (7.3ms)
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:22:57 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (2.0ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (4.2ms)
+  Rendered flights/show.json.jbuilder (8.2ms)
+Completed 200 OK in 31ms (Views: 16.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:22:58 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/show.json.jbuilder (3.9ms)
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:23:00 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.5ms)
+  Rendered flights/show.json.jbuilder (5.6ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:23:15 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for ::1 at 2020-11-05 11:23:15 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (2.0ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/index.json.jbuilder (20.4ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:23:17 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/show.json.jbuilder (4.8ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:23:18 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/show.json.jbuilder (4.7ms)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:23:46 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:23:46 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Processing by FlightsController#index as JSON
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (3.6ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/index.json.jbuilder (20.9ms)
+Completed 200 OK in 34ms (Views: 26.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:23:48 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/show.json.jbuilder (4.7ms)
+Completed 200 OK in 17ms (Views: 9.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:23:50 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/show.json.jbuilder (3.2ms)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:23:52 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (16.1ms)
+  Rendered flights/show.json.jbuilder (36.1ms)
+Completed 200 OK in 61ms (Views: 47.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:23:54 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (5.1ms)
+  Rendered flights/show.json.jbuilder (7.9ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:24:28 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:24:28 +1100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by FlightsController#index as JSON
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 16ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.9ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/index.json.jbuilder (19.0ms)
+Completed 200 OK in 36ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:24:30 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.5ms)
+  Rendered flights/show.json.jbuilder (2.5ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:24:33 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.7ms)
+  Rendered flights/show.json.jbuilder (3.1ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:24:35 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (2.4ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:25:18 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.7ms)
+  Rendered flights/show.json.jbuilder (6.4ms)
+Completed 200 OK in 22ms (Views: 13.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:25:19 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/show.json.jbuilder (2.5ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:26:29 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/show.json.jbuilder (4.9ms)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:26:31 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/show.json.jbuilder (4.6ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:26:32 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (2.6ms)
+  Rendered flights/show.json.jbuilder (5.1ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:33:02 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (1.9ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (6.1ms)
+  Rendered flights/show.json.jbuilder (14.4ms)
+Completed 200 OK in 70ms (Views: 24.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/flights/3.json" for ::1 at 2020-11-05 11:33:06 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.5ms)
+  Rendered flights/show.json.jbuilder (3.2ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/4.json" for ::1 at 2020-11-05 11:33:09 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/show.json.jbuilder (6.1ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:37:11 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:37:11 +1100
+Processing by SessionsController#is_logged_in? as HTML
+Processing by FlightsController#index as JSON
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 1.8ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.9ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (13.7ms)
+Completed 200 OK in 29ms (Views: 17.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/1.json" for ::1 at 2020-11-05 11:37:28 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (3.5ms)
+  Rendered flights/show.json.jbuilder (7.1ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:37:30 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/show.json.jbuilder (2.5ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/2.json" for ::1 at 2020-11-05 11:37:32 +1100
+Processing by FlightsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:68
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:13
+  Rendering flights/show.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/show.json.jbuilder (2.7ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 11:45:55 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 11:45:55 +1100
+Processing by FlightsController#index as JSON
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 14ms (Views: 2.3ms | ActiveRecord: 1.5ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (3.2ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (1.3ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (21.0ms)
+Completed 200 OK in 51ms (Views: 34.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logged_in" for ::1 at 2020-11-05 12:12:57 +1100
+Started GET "/flights.json" for ::1 at 2020-11-05 12:12:57 +1100
+Processing by SessionsController#is_logged_in? as HTML
+Processing by FlightsController#index as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 29ms (Views: 5.9ms | ActiveRecord: 1.3ms)
+
+
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (6.3ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/index.json.jbuilder (34.6ms)
+Completed 200 OK in 67ms (Views: 45.1ms | ActiveRecord: 1.1ms)
+
+
