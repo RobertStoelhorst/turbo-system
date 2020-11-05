@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 
 class Booking extends Component {
   constructor() {
@@ -15,7 +15,6 @@ class Booking extends Component {
   }
 
 }
-
 
 
 export default Booking

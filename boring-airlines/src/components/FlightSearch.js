@@ -30,16 +30,27 @@ _onDestinationChange = (event) => {
 
 _handleSearchSubmit = (event) => {
   event.preventDefault();
-  const { origin, destination } = this.state;
-  let search = {
-    origin: origin,
-    destination: destination
-  };
-  console.log(search)
-  axios
-    .get("http://localhost:3001/flights.json", { search }).then((response) => {
-      console.log(response)
-    })
+  // const { origin, destination } = this.state;
+  // let search = {
+  //   origin: this.state.origin,
+  //   destination: this.state.destination
+  // };
+  // console.log(search)
+  const response = axios
+    .get("http://localhost:3001/flights.json").then((response) => {
+      const results = response.data;
+      console.log(results)
+      const filteredResults = results.reduce((memo, current) => {
+        if (current.destination.includes(this.state.destination) && current.origin.includes(this.state.origin)
+        ) {
+          memo.push(current);
+        }
+        return memo;
+      }, []);
+      // this.setState({flights: filteredResults});
+      console.log(filteredResults)
+        }
+    )
 }
 
 render() {

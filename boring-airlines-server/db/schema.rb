@@ -22,11 +22,7 @@ ActiveRecord::Schema.define(version: 2020_11_04_022542) do
   end
 
   create_table "planes", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer "row"
-=======
     t.string "row"
->>>>>>> 0692e22f9855fe1c175a5e9e9016796295fef2dd
     t.integer "column"
     t.text "name"
     t.datetime "created_at", null: false

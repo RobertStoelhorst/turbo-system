@@ -8,7 +8,7 @@ import Flights from "./Flights";
 import Flight from "./Flight";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
-import Booking from './Booking';
+import Booking from "./Booking";
 
 class App extends Component {
   constructor(props) {
@@ -80,12 +80,12 @@ class App extends Component {
 
   render() {
     return (
-
       <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand bg-light" href="/">BoringAir</a>
-
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand bg-light" href="/">
+            ✈️ BoringAir
+          </a>
+        </nav>
         <BrowserRouter>
           <Switch>
             <Route
@@ -146,7 +146,6 @@ class App extends Component {
             </Route>
           </Switch>
         </BrowserRouter>
-
       </div>
     );
   }

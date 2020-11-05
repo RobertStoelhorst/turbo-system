@@ -21,6 +21,8 @@ const Home = (props) => {
       <br></br>
       {props.loggedInStatus ? <Link to="/flights">All Flights</Link> : null}
       <br></br>
+        {props.loggedInStatus ? <Link to="/flightsearch">Flight Search</Link> :null}
+      <br></br>
       {props.loggedInStatus ? <Link to="/planes">Create Plane</Link> : null}
       <br></br>
       {props.loggedInStatus ? (
@@ -28,6 +30,7 @@ const Home = (props) => {
           Log Out
         </Link>
       ) : null}
+
     </div>
   );
 };
