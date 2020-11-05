@@ -6,6 +6,7 @@ import Signup from "./Signup";
 import Home from "./Home";
 import Flights from "./Flights";
 import Flight from "./Flight";
+import FlightSearch from './FlightSearch'
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
 import Booking from "./Booking";
@@ -141,6 +142,26 @@ class App extends Component {
                 <Airplane {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
+            <Route
+              exact
+              path="/flightsearch"
+              render={(props) => (
+                <FlightSearch {...props} loggedInStatus={this.state.isLoggedIn} />
+              )}
+            />
+            <Route
+              exact
+              path="/booking"
+              render={(props) => (
+                <Booking
+                  {...props}
+                  flights={this.state.flights}
+                  addNewFlight={this.addNewFlight}
+                  fetchFlights={this.fetchFlights}
+                />
+              )}
+            />
+
             <Route>
               <NotFound />
             </Route>
