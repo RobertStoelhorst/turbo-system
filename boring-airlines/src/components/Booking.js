@@ -12,7 +12,7 @@ class Booking extends Component {
       <div class="container">
       <div class="form-group">
         <h2 class="text-muted">Make Reservation</h2>
-        <form >
+        <form>
         <h4 class="text-muted">Passenger Details:</h4>
         <input class="form-control"
           placeholder="Title"
@@ -40,7 +40,7 @@ class Booking extends Component {
         <br/>
           <input class="form-control" type="date" id="birthday" name="birthday" required></input>
           <br/>
-            <Link class="btn btn-primary" to="/">Next</Link>
+          <input class="btn btn-primary" type="submit" value="Next" />
         </form>
         </div>
       </div>
