@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Flight extends Component {
   constructor() {
@@ -26,18 +27,22 @@ class Flight extends Component {
           destination: response.data.destination,
           origin: response.data.origin,
           date: response.data.date,
+          row: response.data.row
         }));
       });
   };
 
+
   render() {
     return (
-      <>
+      <div>
         <h1>Flight {this.state.name}</h1>
         <h3>Origin: {this.state.origin}</h3>
         <h3>Destination: {this.state.destination}</h3>
         <h3>Date: {this.state.date}</h3>
-      </>
+        <br/>
+        <Link class="btn btn-primary" to="/booking">Book Flight</Link>
+      </div>
     );
   }
 }

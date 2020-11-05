@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, useParams } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import Flights from "./Flights";
-import FlightSearch from "./FlightSearch";
+import Flight from "./Flight";
 import Airplane from "./Airplane";
 import NotFound from "./NotFound";
-
-             <link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous"
-             />
+import Booking from "./Booking";
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +18,6 @@ class App extends Component {
       user: {},
       admin: false,
       flights: [],
-      planes: []
     };
   }
 
@@ -35,33 +28,18 @@ class App extends Component {
   };
 
   fetchFlights = async () => {
-
     const resp = await axios.get("http://localhost:3001/flights.json", {
       withCredentials: true,
     });
-    console.log(resp.data);
+    // console.log(resp.data);
     this.setState({
       flights: [...this.state.flights, resp.data],
     });
   };
 
-  fetchPlanes = async () => {
-    const resp = await axios.get("http://localhost:3001/planes.json");
-    console.log(resp);
-    this.setState({
-     planes: [...this.state.planes, resp.data],
-   });
-
-
-
-
-  };
-
   componentDidMount() {
     this.loginStatus();
     this.fetchFlights();
-
-    this.fetchPlanes();
   }
 
   componentWillMount() {
@@ -102,7 +80,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand bg-light" href="/">
+            ✈️ BoringAir
+          </a>
+        </nav>
         <BrowserRouter>
           <Switch>
             <Route
@@ -128,6 +111,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/flights/:flightID" component={Flight} />
             <Route
               exact
               path="/login"
@@ -157,14 +141,6 @@ class App extends Component {
                 <Airplane {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
-            <Route
-              exact
-              path="/flightsearch"
-              render={(props) => (
-                <FlightSearch {...props} loggedInStatus={this.state.isLoggedIn} />
-              )}
-            />
-
             <Route>
               <NotFound />
             </Route>
