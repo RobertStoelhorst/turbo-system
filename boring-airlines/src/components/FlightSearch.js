@@ -43,12 +43,20 @@ _handleSearchSubmit = (event) => {
       const filteredResults = results.reduce((memo, current) => {
         if (current.destination.includes(this.state.destination) && current.origin.includes(this.state.origin)
         ) {
+
           memo.push(current);
         }
         return memo;
+          console.log(filteredResults)
+
+
       }, []);
+      var flightpath = filteredResults[0].id;
+        window.location.href = `http://localhost:3000/flights/${flightpath}`;
       // this.setState({flights: filteredResults});
-      console.log(filteredResults)
+
+
+
         }
     )
 }
