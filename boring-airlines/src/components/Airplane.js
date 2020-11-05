@@ -43,21 +43,21 @@ class Airplane extends Component {
           <form onSubmit={this._handleSubmit}>
             <input
               class="form-control"
-              placeholder="JFK"
+              placeholder="747"
               type="text"
               name="name"
               onChange={this._handleChange}
             />
             <input
               class="form-control"
-              placeholder="a"
+              placeholder="28"
               type="integer"
               name="rows"
               onChange={this._handleChange}
             />
             <input
               class="form-control"
-              placeholder="1"
+              placeholder="3"
               type="integer"
               name="columns"
               onChange={this._handleChange}
