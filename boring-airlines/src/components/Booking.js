@@ -12,15 +12,17 @@ class Booking extends Component {
       <div class="container">
       <div class="form-group">
         <h2 class="text-muted">Make Reservation</h2>
+        <br/><br/>
         <form>
         <h4 class="text-muted">Passenger Details:</h4>
-        <input class="form-control"
-          placeholder="Title"
-          type="text"
-          name=""
-          required
-          onChange={this.handleChange}
-        />
+        <br/>
+        <select class="form-group">
+          <option selected disabled>Title</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+          <option value="Ms">Ms</option>
+        </select>
         <input class="form-control"
           placeholder="First Name"
           type="text"
@@ -31,8 +33,14 @@ class Booking extends Component {
         <input class="form-control"
           placeholder="Last Name"
           type="text"
-          name="email"
+          name="name"
           required
+          onChange={this.handleChange}
+        />
+        <input class="form-control"
+          placeholder="email"
+          type="text"
+          name="email"
           onChange={this.handleChange}
         />
         <br/>
@@ -40,7 +48,7 @@ class Booking extends Component {
         <br/>
           <input class="form-control" type="date" id="birthday" name="birthday" required></input>
           <br/>
-          <input class="btn btn-primary" type="submit" value="Next" />
+          <input class="btn btn-primary" type="submit" value="Next"/>
         </form>
         </div>
       </div>
